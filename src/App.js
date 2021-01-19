@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import CurrencyRow from './CurrencyRow';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 const BASE_URL = 'https://api.exchangeratesapi.io/latest';
 
@@ -56,6 +58,8 @@ function App() {
 
   return (
     <>
+    <Card variant="outlined">
+      <CardContent>
       <h1>Convert</h1>
       <CurrencyRow 
         currencyOptions={currencyOptions} 
@@ -72,6 +76,9 @@ function App() {
         onChangeAmount={handleToAmountChange}
         amount={toAmount}
       />
+      </CardContent>
+    </Card>
+      
     </>
   );
 }
